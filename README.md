@@ -1,6 +1,6 @@
 # User Management App
 
-A modern, feature-rich platform designed for efficient user management.
+A modern, feature-rich platform designed for efficient user management. Create for assignment
 
 ## Live Demo
 
