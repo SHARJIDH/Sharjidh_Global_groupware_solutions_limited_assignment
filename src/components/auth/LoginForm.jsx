@@ -59,7 +59,7 @@ const LoginForm = () => {
   const techStack = ['React', 'Tailwind CSS', 'Framer Motion'];
 
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className="flex min-h-screen w-full overflow-hidden">
 
       <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-primary-600 to-primary-400">
         <div className="w-full p-8 flex flex-col justify-between">
@@ -130,7 +130,7 @@ const LoginForm = () => {
 
       {/* Right Section - Login Form */}
       <div className="w-full lg:w-1/2 bg-gray-50">
-        <div className="h-full flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center py-8">
           <div className="w-full max-w-md px-6 lg:px-10 space-y-6">
             {/* Mobile Only Header */}
             <motion.div
