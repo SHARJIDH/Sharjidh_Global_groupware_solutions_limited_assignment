@@ -4,7 +4,7 @@ A modern, feature-rich platform designed for efficient user management. Create f
 
 ## Live Demo
 
-The application is running live at: [https://sharjidh-global-groupware-solutions-limited-assignment.vercel.app/login](https://sharjidh-global-groupware-solutions-limited-assignment.vercel.app/login)
+The application is running live at: [https://sharjidh-global-groupware-solutions-limited-assignment.vercel.app](https://sharjidh-global-groupware-solutions-limited-assignment.vercel.app/)
 
 ## Features
 
