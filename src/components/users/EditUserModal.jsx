@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const EditUserModal = ({ user, isOpen, onClose, onUpdate }) => {
   const [formData, setFormData] = useState({
@@ -172,6 +173,18 @@ const EditUserModal = ({ user, isOpen, onClose, onUpdate }) => {
       )}
     </AnimatePresence>
   );
+};
+
+EditUserModal.propTypes = {
+  user: PropTypes.shape({
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
+    email: PropTypes.string,
+    avatar: PropTypes.string,
+  }),
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired
 };
 
 export default EditUserModal;

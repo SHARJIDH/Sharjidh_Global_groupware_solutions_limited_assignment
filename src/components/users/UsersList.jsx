@@ -53,6 +53,7 @@ const UsersList = () => {
       setTotalPages(response.data.total_pages);
       setLoading(false);
     } catch (error) {
+      console.error('Fetching user:', error);
       toast.error('Failed to fetch users');
       setLoading(false);
     }
@@ -65,6 +66,7 @@ const UsersList = () => {
       setUsers(users.filter(user => user.id !== id));
       toast.success('User deleted successfully');
     } catch (error) {
+      console.error('Error deleting user:', error);
       toast.error('Failed to delete user');
     } finally {
       setDeleteLoading(null);
@@ -82,12 +84,13 @@ const UsersList = () => {
 
   const handleUpdate = async (updatedData) => {
     try {
-      const response = await axios.put(`https://reqres.in/api/users/${editingUser.id}`, updatedData);
+      await axios.put(`https://reqres.in/api/users/${editingUser.id}`, updatedData);
       const updatedUser = { ...editingUser, ...updatedData };
       setUsers(users.map(user => user.id === editingUser.id ? updatedUser : user));
       setEditingUser(null);
       toast.success('User updated successfully');
     } catch (error) {
+      console.error('Error updating user:', error);
       toast.error('Failed to update user');
     }
   };
@@ -114,14 +117,14 @@ const UsersList = () => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full min-h-screen bg-gray-50"
+      className="w-screen min-h-screen bg-gray-50"
     >
       <motion.nav 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full bg-white shadow-sm"
+        className="bg-white shadow-sm"
       >
-        <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-gray-900">User Management</h1>
@@ -165,7 +168,7 @@ const UsersList = () => {
         </div>
       </motion.nav>
 
-      <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div 
           variants={container}
           initial="hidden"

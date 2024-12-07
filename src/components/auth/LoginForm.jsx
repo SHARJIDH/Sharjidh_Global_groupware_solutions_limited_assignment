@@ -37,53 +37,32 @@ const LoginForm = () => {
 
   const features = [
     {
-      title: "Secure Authentication",
-      description: "Industry-standard token-based authentication system",
+      title: 'Secure Authentication',
+      description: 'Industry-standard token-based authentication system',
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       )
     },
     {
-      title: "User Management",
-      description: "Comprehensive user control with CRUD operations",
+      title: 'User Management',
+      description: 'Comprehensive user control with CRUD operations',
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-    },
-    {
-      title: "Modern UI/UX",
-      description: "Beautiful interface with smooth animations",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-        </svg>
-      )
-    },
-    {
-      title: "Real-time Updates",
-      description: "Instant feedback and live data synchronization",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       )
     }
   ];
 
-  const techStack = [
-    "React", "Tailwind CSS", "Framer Motion", "Axios", "React Router"
-  ];
+  const techStack = ['React', 'Tailwind CSS', 'Framer Motion'];
 
   return (
-    <div className="w-full h-screen grid grid-cols-1 lg:grid-cols-2">
-      {/* Left Section - Project Info */}
-      <div className="hidden lg:block bg-gradient-to-br from-primary-600 to-primary-400 text-white h-full">
-        <div className="h-full p-8 flex flex-col justify-between overflow-y-auto">
-          {/* Background Animation */}
+    <div className="flex h-screen w-full overflow-hidden">
+
+      <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-primary-600 to-primary-400">
+        <div className="w-full p-8 flex flex-col justify-between">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ 
@@ -96,41 +75,24 @@ const LoginForm = () => {
               repeat: Infinity,
               repeatType: "reverse"
             }}
-            className="fixed top-0 left-0 w-3/5 h-full bg-gradient-to-br from-white/10 to-transparent pointer-events-none"
+            className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"
           />
-
-          {/* Main Content */}
-          <div className="relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="max-w-2xl"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex items-center space-x-4 mb-8"
-              >
+          <div className="relative z-10 flex flex-col h-full justify-between">
+            <div>
+              <div className="flex items-center space-x-4 mb-8">
                 <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                   </svg>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold">User Management</h1>
-              </motion.div>
+                <h1 className="text-4xl font-bold text-white">User Management</h1>
+              </div>
 
-              <motion.p 
-                className="text-xl text-primary-100 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-              >
-                A modern, feature-rich platform designed for efficient user management with a beautiful interface and powerful functionality.
-              </motion.p>
+              <p className="text-xl text-primary-100 mb-12">
+                A modern, feature-rich platform designed for efficient user management.
+              </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-6">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
@@ -142,48 +104,34 @@ const LoginForm = () => {
                     <div className="rounded-lg bg-white/20 w-8 h-8 flex items-center justify-center mb-4">
                       {feature.icon}
                     </div>
-                    <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
                     <p className="text-primary-100 text-sm">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-          </div>
+            </div>
 
-          {/* Tech Stack */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="relative z-10 mt-12 mb-8"
-          >
-            <h3 className="text-lg font-semibold mb-4">Built with modern technologies</h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 mt-8">
               {techStack.map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1.7 + index * 0.1 }}
-                  className="px-4 py-2 bg-white/10 rounded-full text-sm hover:bg-white/20 transition-all duration-300"
+                  className="px-3 py-1 bg-white/10 rounded-full text-sm text-white hover:bg-white/20 transition-all duration-300"
                 >
                   {tech}
                 </motion.span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Right Section - Login Form */}
-      <div className="h-screen bg-gray-50 flex items-center">
-        <div className="w-full max-w-md mx-auto px-8">
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-6"
-          >
+      <div className="w-full lg:w-1/2 bg-gray-50">
+        <div className="h-full flex items-center justify-center">
+          <div className="w-full max-w-md px-6 lg:px-10 space-y-6">
             {/* Mobile Only Header */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -294,7 +242,7 @@ const LoginForm = () => {
                 <p><span className="font-medium">Password:</span> cityslicka</p>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
