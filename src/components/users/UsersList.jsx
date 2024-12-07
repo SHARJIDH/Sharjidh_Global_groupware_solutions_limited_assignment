@@ -124,20 +124,26 @@ const UsersList = () => {
         animate={{ opacity: 1, y: 0 }}
         className="bg-white shadow-sm"
       >
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+            <div className="flex items-center justify-between">
               <h1 className="text-2xl font-bold text-gray-900">User Management</h1>
+              <button
+                onClick={() => navigate('/login')}
+                className="md:hidden px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              >
+                Logout
+              </button>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-between space-x-4">
               {/* Search Input */}
-              <div className="relative">
+              <div className="relative flex-grow max-w-md">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search users..."
-                  className="w-64 px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
                 <div className="absolute inset-y-0 right-3 flex items-center">
                   {searchQuery ? (
@@ -156,10 +162,9 @@ const UsersList = () => {
                   )}
                 </div>
               </div>
-              
               <button
-                onClick={handleLogout}
-                className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                onClick={() => navigate('/login')}
+                className="hidden md:block px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
                 Logout
               </button>
